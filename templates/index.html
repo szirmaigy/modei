@@ -13,14 +13,23 @@
     </div>
   </div>
 </form>
-
-<form action="/sum" method="post">
-	<input stype="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="a" type="text" name="a" required>
- 	<input stype="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="b" type="text" name="b" required>
-	<input type="submit" value="Submit">
-	<div class="container">
-		<p class="col py-2 px-md-1">SUM: {{ sumn }}</p>
-	</div>
-</form>
-
+<br>
+<div class="container">
+  <form action="/sum" method="post">
+    <div class="row">
+      <div class="col-2">
+  	     <input stype="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="a" type="text" name="a" required>
+      </div>
+      <div class="col-2">
+          <input stype="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="b" type="text" name="b" required>
+      </div>
+      <div class="col-2">
+          <input type="submit" value="Submit">
+      </div>
+    </div>
+  	<div class="container">
+  		<p class="col py-2 px-md-1">SUM: {{ sumn }}</p>
+  	</div>
+  </form>
+</div>
 {% endblock %}

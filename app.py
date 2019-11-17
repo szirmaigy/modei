@@ -32,13 +32,13 @@ def get_uuid():
 @app.route('/sum', methods=['POST'])
 def sumh():
     try:
-        a = request.form.get("a")
-        b = request.form.get("b")
+        a = int(request.form.get('a'))
+        b = int(request.form.get('b'))
         # a = 4
         # b = 1
         # sumn = a + b
-        sumn = test.sum(a,b)
-        return render_template("main.html", sumn=sumn)
+        sumn = sum(a,b)
+        return render_template("index.html", sumn=sumn)
     except Exception as e:
 	    return render_template("500.html", error = str(e))
 
