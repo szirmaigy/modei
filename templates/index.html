@@ -5,13 +5,22 @@
   <div class="container">
     <div class="row">
       <div class="col-2">
-        <button type="submit" class="btn btn-info btn-sm">Generation UUID</button>
+        <button type="submit" class="btn btn-info btn-sm">UUID Generation</button>
       </div>
       <div class="col-4">
         <p>{{ uuid }}</p>
       </div>
     </div>
   </div>
+</form>
+
+<form action="/sum" method="post">
+	<input stype="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="a" type="text" name="a" required>
+ 	<input stype="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="b" type="text" name="b" required>
+	<input type="submit" value="Submit">
+	<div class="container">
+		<p class="col py-2 px-md-1">SUM: {{ sumn }}</p>
+	</div>
 </form>
 
 {% endblock %}

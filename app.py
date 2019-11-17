@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 # from waitress import serve
 import uuid, sys, os, re
+from test import sum
 
 app = Flask(__name__)
 
@@ -25,6 +26,19 @@ def get_uuid():
     try:
         uuid_p = str(uuid.uuid4())
         return render_template("index.html", uuid=uuid_p)
+    except Exception as e:
+	    return render_template("500.html", error = str(e))
+
+@app.route('/sum', methods=['POST'])
+def sumh():
+    try:
+        a = request.form.get("a")
+        b = request.form.get("b")
+        # a = 4
+        # b = 1
+        # sumn = a + b
+        sumn = test.sum(a,b)
+        return render_template("main.html", sumn=sumn)
     except Exception as e:
 	    return render_template("500.html", error = str(e))
 
