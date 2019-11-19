@@ -47,4 +47,4 @@ def page_not_found(e):
     return render_template("404.html")
 
 if __name__ == "__main__":
-    serve(app, listen='*:8081')
+    app.run(host='0.0.0.0', port='80')
