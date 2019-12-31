@@ -1,3 +1,4 @@
 Flask==1.1.1
 waitress==1.4.1
 domain-validation==1.6.4
+dnspython==1.16.0

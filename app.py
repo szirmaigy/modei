@@ -42,9 +42,13 @@ def sumh():
 @app.route('/Domain', methods=['POST'])
 def DomainI():
     try:
-        DomainName = request.form.get('DomainName')
-        Registrar = DInfo(DomainName)
-        return render_template("index.html", Registrar=Registrar)
+        DomainNameInput = request.form.get('DomainName')
+        DomainName = DInfo(DomainNameInput)
+        CreationInfo = DomainName.DomainCreationInfo()
+        Registrar = CreationInfo[0]
+        CreationDate = CreationInfo[1]
+        IP4address = DomainName.IPaddress()
+        return render_template("index.html", Registrar=Registrar, CreationDate=CreationDate, IP4address=IP4address)
     except Exception as e:
 	    return render_template("500.html", error = str(e))
 
