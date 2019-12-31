@@ -2,9 +2,9 @@ from flask import Flask, render_template, request
 # from waitress import serve
 import uuid, sys, os, re
 from test import sum
+from domaininfo import DInfo
 
 app = Flask(__name__)
-
 
 @app.after_request
 def add_hostname_header(response):
@@ -34,11 +34,17 @@ def sumh():
     try:
         a = int(request.form.get('a'))
         b = int(request.form.get('b'))
-        # a = 4
-        # b = 1
-        # sumn = a + b
         sumn = sum(a,b)
         return render_template("index.html", sumn=sumn)
+    except Exception as e:
+	    return render_template("500.html", error = str(e))
+
+@app.route('/Domain', methods=['POST'])
+def DomainI():
+    try:
+        DomainName = request.form.get('DomainName')
+        Registrar = DInfo(DomainName)
+        return render_template("index.html", Registrar=Registrar)
     except Exception as e:
 	    return render_template("500.html", error = str(e))
 

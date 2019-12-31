@@ -32,4 +32,20 @@
   	</div>
   </form>
 </div>
+<br>
+<div class="container">
+  <form action="/Domain" method="post">
+    <div class="row">
+      <div class="col-2">
+  	     <input stype="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="DomainName" type="text" name="DomainName" required>
+      </div>
+          <div class="col-2">
+          <input type="submit" value="Submit">
+      </div>
+    </div>
+  	<div class="container">
+  		<p class="col py-2 px-md-1">Domain creator date: {{ Registrar }}</p>
+  	</div>
+  </form>
+</div>
 {% endblock %}
